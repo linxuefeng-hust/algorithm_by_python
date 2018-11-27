@@ -1,10 +1,12 @@
 # i表示左半部正在进行比较的数字的位置，j表示右半部正在进行比较的数字的位置，
 # 而k表示aux中将要进行比较的数字的位置
 # 从小到大排序
+# 写麻烦了
+'''
 import numpy as np
 
 def __merge(arr, lf, mid, rt):
-    aux = np.zeros((rt-lf+1))
+    aux = np.zeros((rt-lf+1)) # 归并相比快排多占用了空间
     for i in range(lf,rt+1): # 闭区间，将rt包含在内
         aux[i - lf] = arr[i]
     i = lf, j = mid +1
@@ -57,11 +59,11 @@ def merge(left, right):
             c.append(right[j])
             j += 1
     if i ==len(left):  # 边界条件
-        for  element in right[j:]:
+        for element in right[j:]:
             c.append(element)
 
     elif j==len(right):
-        for  element in left[i:]:
+        for element in left[i:]: # c.extend(left[i:])
             c.append(element)
     return c
 
@@ -71,9 +73,9 @@ def merge_sort(lists):
     mid = len(lists)//2
     left = merge_sort(lists[:mid])
     right = merge_sort(lists[mid:])
-    return  merge(left, right)
+    return merge(left, right)
 
 if __name__=='__main__':
     arr = np.random.randint(-20, 20, 30)
     print(np.array(merge_sort(arr))) # 传入的是array，返回的是list需要转换成array
-'''
+
