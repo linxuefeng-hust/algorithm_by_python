@@ -12,7 +12,7 @@ def partion(alist,l, r):
     value=alist[l]
     j=l
     #从大到小排序
-    # 定义：a[l+1...j] >=x； a[j+1...i) <x, 前闭后开，i表示当前值,一开始这两个数组都为空
+    # 定义：a[l+1...j] >=value； a[j+1...i) <value, 前闭后开，i表示当前值,一开始这两个数组都为空
     for i in range(l+1, r+1):
         if alist[i] >= value:
             j += 1
