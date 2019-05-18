@@ -16,7 +16,7 @@ def partion(alist,l, r):
     for i in range(l+1, r+1):
         if alist[i] >= value:
             j += 1
-            alist[i], alist[j] = alist[j], alist[i]
+            alist[i], alist[j] = alist[j], alist[i] #当i与j相等时，不起作用，一旦i大于j了，就开始真正地交换了
     alist[l], alist[j] = alist[j], alist[l]
     return j
 
